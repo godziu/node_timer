@@ -1,4 +1,5 @@
 var os = require('os');
+var timeConvert = require('../modules/TimeConvert');
 
 function getOSinfo() {
     var type = os.type();
@@ -14,7 +15,7 @@ function getOSinfo() {
     console.log('System:', type);
     console.log('Release:', release);
     console.log('CPU model:', cpu);
-    console.log('Uptime: ~', (uptime / 60).toFixed(0), 'min');
+    timeConvert.print();
     console.log('User name:', userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }

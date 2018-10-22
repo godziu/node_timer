@@ -7,9 +7,9 @@ var uptime = os.uptime();
         var seconds = uptime - (hours * 3600) - (minutes * 60);
     
     if(hours > 0) {
-        console.log( 'Uptime: ~', (hours).toFixed(0), 'hours ' + (minutes).toFixed(0), 'min ' + (seconds).toFixed(0), 'sec');
+        console.log( 'Uptime: ~'.red, (hours).toFixed(0), 'hours ' + (minutes).toFixed(0), 'min ' + (seconds).toFixed(0), 'sec');
     } else if(minutes > 0) {
-        console.log( 'Uptime: ~', (minutes).toFixed(0), 'min ' + (seconds).toFixed(0), 'sec');
+        console.log( 'Uptime: ~'.red, (minutes).toFixed(0), 'min ' + (seconds).toFixed(0), 'sec');
     } 
 } 
 

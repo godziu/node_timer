@@ -1,4 +1,5 @@
-var OSinfo = require('../modules/OSinfo');
+var OSinfo = require('./modules/OSinfo');
+var colors = require('colors');
 
 process.stdin.setEncoding( 'utf-8' );
 
@@ -10,7 +11,7 @@ process.stdin.on( 'readable', function() {
     if( input !== null ) {
         // Dopisz do zmiennej odczyt wejscia wartosci nastepnie zamien na string i usun odstepy
         var instruction = input.toString().trim();
-        console.log("co ja robie tu uu");
+        console.log("co ja robie tu uu".rainbow);
         // Jesli uzytkownik wpisal poprawna wartosc, wyswietl wynik
         switch( instruction ) {
             // Sprawdz czy wartosc jest rowna stringowi

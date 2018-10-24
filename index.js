@@ -1,7 +1,24 @@
 var OSinfo = require('./modules/OSinfo');
 var colors = require('colors');
-
+var fs = require('fs');
+var StatMode = require('stat-mode');
 process.stdin.setEncoding( 'utf-8' );
+
+
+fs.stat('./cat.jpg', function(err, stats) {
+    var statMode = new StatMode(stats);
+    console.log(statMode.toString());
+});
+
+fs.readdir( './', 'utf-8', function( err, files ) {
+    console.log( 'Sciezka do katalogu przed zapisem.'.green );
+    console.log( 'Output: ', files );
+    fs.writeFile( './tekst.txt', files, function( err ) {
+        if( err ) throw err;
+        console.log( 'Zapisano tekst!'.yellow );
+    });
+});
+
 
 // Ustaw nasluchiwanie na zdarzenie odczytu
 process.stdin.on( 'readable', function() {
